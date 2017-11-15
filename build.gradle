@@ -1,0 +1,57 @@
+group 'zone.cogni'
+
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+  mavenCentral()
+  maven { url "https://jitpack.io" }
+}
+
+dependencies {
+
+  // compile 'org.apache.jena:jena-core:3.2.0'
+  // compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+  // compile group: 'org.springframework', name: 'spring-web', version: '4.3.8.RELEASE'
+  // compile ('io.javaslang:javaslang:2.0.6')
+//  compile group: 'io.vavr', name: 'vavr', version: '0.9.0'
+
+  compile('org.slf4j:slf4j-api:1.7.25')
+  compile('ch.qos.logback:logback-classic:1.2.3')
+
+  compile ('com.github.TopQuadrant:shacl:shacl-1.0.1') {
+    exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+  }
+
+
+  // compile group: 'commons-io', name: 'commons-io', version: '2.5'
+  // compile group: 'org.json', name: 'json', version: '20160810'
+
+
+  // compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.8'
+  // compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.8'
+  // compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.8.8'
+  // compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.8.8'
+
+}
+
+jar {
+  baseName = 'shacl-validator'
+  version = '1.0.0.SNAPSHOT'
+  manifest {
+    attributes (
+            'Main-Class': 'zone.cogni.shacl_validator.Main'
+    )
+  }
+  from {
+    configurations.runtime.collect {
+      it.isDirectory() ? it : zipTree(it)
+    }
+  }
+}
+
+
+
