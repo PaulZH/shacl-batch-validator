@@ -1,2 +1,2 @@
 # shacl
-schacl validator
+shacl validator
