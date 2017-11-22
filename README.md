@@ -2,6 +2,8 @@
 
 Using this tool you can easily run shacl validations and get reports.
 
+Input shacl and data files can be any type of RDF; output reports are turtle files.
+
 ## Using the tool 
 
 From the commandline output
@@ -12,7 +14,6 @@ usage: java -jar shacl-validator.jar
                 [--validate folder, file or ant-style file pattern (./conceptscheme/**/*.ttl)] 
 optional:       [--destination folder] 
 ```
-
 
 Example                     
 
