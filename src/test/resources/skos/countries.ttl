@@ -1,0 +1,3726 @@
+@prefix jur: <http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#>.
+@prefix dce: <http://purl.org/dc/elements/1.1/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix country: <http://eulersharp.sourceforge.net/2003/03swap/countries#>.
+
+<http://eulersharp.sourceforge.net/2003/03swap/countries>
+	a owl:Ontology;
+	dce:title """Countries"""@en;
+	dce:creator """Pieterjan De Potter and Pedro Debevere, Ghent University - IBBT/ELIS - Multimedia Lab/Belgium"""@en;
+	dce:contributor """Hans Cools, MD, Agfa Healthcare/Belgium"""@en;
+	dce:publisher """Agfa Healthcare/Belgium"""@en;
+	dce:description """Formal description of countries and their codes as standardized in ISO 3166-1 version 2006."""@en;
+	dce:format """OWL-Full"""@en.
+
+#
+# SKOS SCHEME AND DATATYPE INSTANCES
+#
+
+country:iso3166-1-alpha-2
+	a skos:ConceptScheme;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	rdfs:label """ISO3166-1-alpha-2""";
+	dct:hasVersion """alpha-2""".
+
+country:iso3166-1-alpha-2DT
+	a rdfs:Datatype.
+
+country:iso3166-1-alpha-3
+	a skos:ConceptScheme;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	rdfs:label """ISO3166-1-alpha-3""";
+	dct:hasVersion """alpha-3""".
+
+country:iso3166-1-alpha-3DT
+	a rdfs:Datatype.
+
+#
+# INSTANCES
+#
+
+country:af
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept; skos:inScheme country:iso3166-1-alpha-2; skos:notation "af"^^country:iso3166-1-alpha-2DT], [
+		a skos:Concept; skos:inScheme country:iso3166-1-alpha-3; skos:notation "afg"^^country:iso3166-1-alpha-3DT];
+	foaf:name """Afghanistan"""@en.
+
+country:ax
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ax"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ala"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Aland Islands"""@en.
+
+country:al
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "al"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "alb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Albania"""@en.
+
+country:dz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "dz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "dza"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Algeria"""@en.
+
+country:as
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "as"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "asm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """American Samoa"""@en.
+
+country:ad
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ad"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "and"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Andorra"""@en.
+
+country:ao
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ao"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ago"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Angola"""@en.
+
+country:ai
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ai"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "aia"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Anguilla"""@en.
+
+country:aq
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "aq"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ata"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Antarctica"""@en.
+
+country:ag
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ag"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "atg"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Antigua and Barbuda"""@en.
+
+country:ar
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ar"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "arg"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Argentina"""@en.
+
+country:am
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "am"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "arm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Armenia"""@en.
+
+country:aw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "aw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "abw"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Aruba"""@en.
+
+country:au
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "au"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "aus"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Australia"""@en.
+
+country:at
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "at"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "aut"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Austria"""@en.
+
+country:az
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "az"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "aze"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Azerbaijan"""@en.
+
+country:bs
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bs"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bhs"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bahamas"""@en.
+
+country:bh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bhr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bahrain"""@en.
+
+country:bd
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bd"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bgd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bangladesh"""@en.
+
+country:bb
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bb"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "brb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Barbados"""@en.
+
+country:by
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "by"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "blr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Belarus"""@en.
+
+country:be
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "be"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bel"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Belgium"""@en.
+
+country:bz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "blz"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Belize"""@en.
+
+country:bj
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bj"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ben"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Benin"""@en.
+
+country:bm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bmu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bermuda"""@en.
+
+country:bt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "btn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bhutan"""@en.
+
+country:bo
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bo"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bol"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bolivia, Plurinational State of"""@en.
+
+country:ba
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ba"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bih"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bosnia and Herzegovina"""@en.
+
+country:bw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bwa"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Botswana"""@en.
+
+country:bv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bvt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bouvet Island"""@en.
+
+country:br
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "br"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bra"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Brazil"""@en.
+
+country:io
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "io"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "iot"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """British Indian Ocean Territory"""@en.
+
+country:bn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "brn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Brunei Darussalam"""@en.
+
+country:bg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bgr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Bulgaria"""@en.
+
+country:bf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bfa"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Burkina Faso"""@en.
+
+country:bi
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bi"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "bdi"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Burundi"""@en.
+
+country:kh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "khm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cambodia"""@en.
+
+country:cm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cmr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cameroon"""@en.
+
+country:ca
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ca"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "can"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Canada"""@en.
+
+country:cv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cpv"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cape Verde"""@en.
+
+country:ky
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ky"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cym"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cayman Islands"""@en.
+
+country:cf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "caf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Central African Republic"""@en.
+
+country:td
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "td"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tcd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Chad"""@en.
+
+country:cl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "chl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Chile"""@en.
+
+country:cn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "chn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """China"""@en.
+
+country:cx
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cx"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cxr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Christmas Island"""@en.
+
+country:cc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cck"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cocos (Keeling) Islands"""@en.
+
+country:co
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "co"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "col"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Colombia"""@en.
+
+country:km
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "km"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "com"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Comoros"""@en.
+
+country:cg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cog"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Congo"""@en.
+
+country:cd
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cd"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cod"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Congo, the Democratic Republic of the"""@en.
+
+country:ck
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ck"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cok"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cook Islands"""@en.
+
+country:cr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cri"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Costa Rica"""@en.
+
+country:ci
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ci"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "civ"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cote d'Ivoire"""@en.
+
+country:hr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "hr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hrv"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Croatia"""@en.
+
+country:cu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cub"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cuba"""@en.
+
+country:cy
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cy"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cyp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Cyprus"""@en.
+
+country:cz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "cz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "cze"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Czech Republic"""@en.
+
+country:dk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "dk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "dnk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Denmark"""@en.
+
+country:dj
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "dj"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "dji"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Djibouti"""@en.
+
+country:dm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "dm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "dma"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Dominica"""@en.
+
+country:do
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "do"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "dom"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Dominican Republic"""@en.
+
+country:ec
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ec"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ecu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Ecuador"""@en.
+
+country:eg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "eg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "egy"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Egypt"""@en.
+
+country:sv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "slv"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """El Salvador"""@en.
+
+country:gq
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gq"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gnq"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Equatorial Guinea"""@en.
+
+country:er
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "er"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "eri"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Eritrea"""@en.
+
+country:ee
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ee"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "est"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Estonia"""@en.
+
+country:et
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "et"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "eth"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Ethiopia"""@en.
+
+country:fk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "flk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Falkland Islands (Malvinas)"""@en.
+
+country:fo
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fo"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "fro"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Faroe Islands"""@en.
+
+country:fj
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fj"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "fji"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Fiji"""@en.
+
+country:fi
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fi"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "fin"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Finland"""@en.
+
+country:fr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "fra"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """France"""@en.
+
+country:gf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "guf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """French Guiana"""@en.
+
+country:pf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pyf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """French Polynesia"""@en.
+
+country:tf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "atf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """French Southern Territories"""@en.
+
+country:ga
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ga"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gab"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Gabon"""@en.
+
+country:gm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gmb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Gambia"""@en.
+
+country:ge
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ge"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "geo"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Georgia"""@en.
+
+country:de
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "de"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "deu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Germany"""@en.
+
+country:gh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gha"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Ghana"""@en.
+
+country:gi
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gi"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gib"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Gibraltar"""@en.
+
+country:gr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "grc"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Greece"""@en.
+
+country:gl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "grl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Greenland"""@en.
+
+country:gd
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gd"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "grd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Grenada"""@en.
+
+country:gp
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gp"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "glp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guadeloupe"""@en.
+
+country:gu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gum"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guam"""@en.
+
+country:gt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gtm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guatemala"""@en.
+
+country:gg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ggy"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guernsey"""@en.
+
+country:gn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gin"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guinea"""@en.
+
+country:gw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gnb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guinea-Bissau"""@en.
+
+country:gy
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gy"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "guy"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Guyana"""@en.
+
+country:ht
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ht"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hti"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Haiti"""@en.
+
+country:hm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "hm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hmd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Heard Island and McDonald Islands"""@en.
+
+country:va
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "va"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vat"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Holy See (Vatican City State)"""@en.
+
+country:hn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "hn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hnd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Honduras"""@en.
+
+country:hk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "hk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hkg"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Hong Kong"""@en.
+
+country:hu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "hu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "hun"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Hungary"""@en.
+
+country:is
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "is"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "isl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Iceland"""@en.
+
+country:in
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "in"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ind"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """India"""@en.
+
+country:id
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "id"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "idn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Indonesia"""@en.
+
+country:ir
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ir"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "irn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Iran, Islamic Republic of"""@en.
+
+country:iq
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "iq"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "irq"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Iraq"""@en.
+
+country:ie
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ie"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "irl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Ireland"""@en.
+
+country:im
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "im"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "imn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Isle of Man"""@en.
+
+country:il
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "il"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "isr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Israel"""@en.
+
+country:it
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "it"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ita"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Italy"""@en.
+
+country:jm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "jm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "jam"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Jamaica"""@en.
+
+country:jp
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "jp"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "jpn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Japan"""@en.
+
+country:je
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "je"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "jey"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Jersey"""@en.
+
+country:jo
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "jo"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "jor"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Jordan"""@en.
+
+country:kz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kaz"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Kazakhstan"""@en.
+
+country:ke
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ke"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ken"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Kenya"""@en.
+
+country:ki
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ki"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kir"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Kiribati"""@en.
+
+country:kp
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kp"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "prk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Korea, Democratic People's Republic of"""@en.
+
+country:kr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kor"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Korea, Republic of"""@en.
+
+country:kw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kwt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Kuwait"""@en.
+
+country:kg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kgz"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Kyrgyzstan"""@en.
+
+country:la
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "la"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lao"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Lao People's Democratic Republic"""@en.
+
+country:lv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lva"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Latvia"""@en.
+
+country:lb
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lb"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lbn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Lebanon"""@en.
+
+country:ls
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ls"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lso"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Lesotho"""@en.
+
+country:lr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lbr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Liberia"""@en.
+
+country:ly
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ly"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lby"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Libyan Arab Jamahiriya"""@en.
+
+country:li
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "li"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lie"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Liechtenstein"""@en.
+
+country:lt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ltu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Lithuania"""@en.
+
+country:lu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lux"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Luxembourg"""@en.
+
+country:mo
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mo"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mac"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Macao"""@en.
+
+country:mk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mkd"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Macedonia, the former Yugoslav Republic of"""@en.
+
+country:mg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mdg"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Madagascar"""@en.
+
+country:mw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mwi"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Malawi"""@en.
+
+country:my
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "my"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mys"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Malaysia"""@en.
+
+country:mv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mdv"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Maldives"""@en.
+
+country:ml
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ml"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mli"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mali"""@en.
+
+country:mt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mlt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Malta"""@en.
+
+country:mh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mhl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Marshall Islands"""@en.
+
+country:mq
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mq"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mtq"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Martinique"""@en.
+
+country:mr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mrt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mauritania"""@en.
+
+country:mu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mus"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mauritius"""@en.
+
+country:yt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "yt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "myt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mayotte"""@en.
+
+country:mx
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mx"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mex"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mexico"""@en.
+
+country:fm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "fm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "fsm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Micronesia, Federated States of"""@en.
+
+country:md
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "md"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mda"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Moldova, Republic of"""@en.
+
+country:mc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mco"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Monaco"""@en.
+
+country:mn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mng"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mongolia"""@en.
+
+country:me
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "me"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mne"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Montenegro"""@en.
+
+country:ms
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ms"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "msr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Montserrat"""@en.
+
+country:ma
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ma"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mar"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Morocco"""@en.
+
+country:mz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "moz"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Mozambique"""@en.
+
+country:mm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mmr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Myanmar"""@en.
+
+country:na
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "na"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nam"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Namibia"""@en.
+
+country:nr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nru"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Nauru"""@en.
+
+country:np
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "np"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "npl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Nepal"""@en.
+
+country:nl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nld"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Netherlands"""@en.
+
+country:an
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "an"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ant"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Netherlands Antilles"""@en.
+
+country:nc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ncl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """New Caledonia"""@en.
+
+country:nz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nzl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """New Zealand"""@en.
+
+country:ni
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ni"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nic"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Nicaragua"""@en.
+
+country:ne
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ne"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ner"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Niger"""@en.
+
+country:ng
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ng"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nga"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Nigeria"""@en.
+
+country:nu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "niu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Niue"""@en.
+
+country:nf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "nf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nfk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Norfolk Island"""@en.
+
+country:mp
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mp"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "mnp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Northern Mariana Islands"""@en.
+
+country:no
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "no"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "nor"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Norway"""@en.
+
+country:om
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "om"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "omn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Oman"""@en.
+
+country:pk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pak"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Pakistan"""@en.
+
+country:pw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "plw"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Palau"""@en.
+
+country:ps
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ps"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pse"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Palestinian Territory, Occupied"""@en.
+
+country:pa
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pa"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pan"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Panama"""@en.
+
+country:pg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "png"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Papua New Guinea"""@en.
+
+country:py
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "py"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pry"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Paraguay"""@en.
+
+country:pe
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pe"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "per"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Peru"""@en.
+
+country:ph
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ph"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "phl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Philippines"""@en.
+
+country:pn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pcn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Pitcairn"""@en.
+
+country:pl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pol"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Poland"""@en.
+
+country:pt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "prt"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Portugal"""@en.
+
+country:pr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "pri"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Puerto Rico"""@en.
+
+country:qa
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "qa"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "qat"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Qatar"""@en.
+
+country:re
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "re"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "reu"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Reunion ï»¿ RÃ©union"""@en.
+
+country:ro
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ro"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "rou"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Romania"""@en.
+
+country:ru
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ru"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "rus"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Russian Federation"""@en.
+
+country:rw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "rw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "rwa"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Rwanda"""@en.
+
+country:bl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "bl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "blm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint BarthÃ©lemy"""@en.
+
+country:sh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "shn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Helena"""@en.
+
+country:kn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "kn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "kna"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Kitts and Nevis"""@en.
+
+country:lc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lca"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Lucia"""@en.
+
+country:mf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "mf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "maf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Martin (French part)"""@en.
+
+country:pm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "pm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "spm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Pierre and Miquelon"""@en.
+
+country:vc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "vc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vct"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saint Vincent and the Grenadines"""@en.
+
+country:ws
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ws"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "wsm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Samoa"""@en.
+
+country:sm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "smr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """San Marino"""@en.
+
+country:st
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "st"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "stp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Sao Tome and Principe"""@en.
+
+country:sa
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sa"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sau"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Saudi Arabia"""@en.
+
+country:sn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sen"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Senegal"""@en.
+
+country:rs
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "rs"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "srb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Serbia"""@en.
+
+country:sc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "syc"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Seychelles"""@en.
+
+country:sl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sle"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Sierra Leone"""@en.
+
+country:sg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sgp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Singapore"""@en.
+
+country:sk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "svk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Slovakia"""@en.
+
+country:si
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "si"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "svn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Slovenia"""@en.
+
+country:sb
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sb"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "slb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Solomon Islands"""@en.
+
+country:so
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "so"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "som"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Somalia"""@en.
+
+country:za
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "za"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "zaf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """South Africa"""@en.
+
+country:gs
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gs"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sgs"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """South Georgia and the South Sandwich Islands"""@en.
+
+country:es
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "es"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "esp"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Spain"""@en.
+
+country:lk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "lk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "lka"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Sri Lanka"""@en.
+
+country:sd
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sd"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sdn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Sudan"""@en.
+
+country:sr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sur"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Suriname"""@en.
+
+country:sj
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sj"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "sjm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Svalbard and Jan Mayen"""@en.
+
+country:sz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "swz"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Swaziland"""@en.
+
+country:se
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "se"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "swe"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Sweden"""@en.
+
+country:ch
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ch"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "che"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Switzerland"""@en.
+
+country:sy
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "sy"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "syr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Syrian Arab Republic"""@en.
+
+country:tw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "twn"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Taiwan, Province of China"""@en.
+
+country:tj
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tj"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tjk"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tajikistan"""@en.
+
+country:tz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tza"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tanzania, United Republic of"""@en.
+
+country:th
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "th"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tha"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Thailand"""@en.
+
+country:tl
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tl"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tls"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Timor-Leste"""@en.
+
+country:tg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tgo"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Togo"""@en.
+
+country:tk
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tk"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tkl"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tokelau"""@en.
+
+country:to
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "to"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ton"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tonga"""@en.
+
+country:tt
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tt"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tto"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Trinidad and Tobago"""@en.
+
+country:tn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tun"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tunisia"""@en.
+
+country:tr
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tr"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tur"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Turkey"""@en.
+
+country:tm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tkm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Turkmenistan"""@en.
+
+country:tc
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tc"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tca"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Turks and Caicos Islands"""@en.
+
+country:tv
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "tv"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "tuv"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Tuvalu"""@en.
+
+country:ug
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ug"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "uga"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Uganda"""@en.
+
+country:ua
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ua"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ukr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Ukraine"""@en.
+
+country:ae
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ae"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "are"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """United Arab Emirates"""@en.
+
+country:gb
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "gb"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "gbr"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """United Kingdom"""@en.
+
+country:us
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "us"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "usa"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """United States"""@en.
+
+country:um
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "um"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "umi"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """United States Minor Outlying Islands"""@en.
+
+country:uy
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "uy"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ury"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Uruguay"""@en.
+
+country:uz
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "uz"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "uzb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Uzbekistan"""@en.
+
+country:vu
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "vu"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vut"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Vanuatu"""@en.
+
+country:ve
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ve"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "ven"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Venezuela, Bolivarian Republic of"""@en.
+
+country:vn
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "vn"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vnm"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Viet Nam"""@en.
+
+country:vg
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "vg"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vgb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Virgin Islands, British"""@en.
+
+country:vi
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "vi"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "vir"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Virgin Islands, U.S."""@en.
+
+country:wf
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "wf"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "wlf"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Wallis and Futuna"""@en.
+
+country:eh
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "eh"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "esh"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Western Sahara"""@en.
+
+country:ye
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "ye"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "yem"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Yemen"""@en.
+
+country:zm
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "zm"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "zmb"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Zambia"""@en.
+
+country:zw
+	a jur:Country;
+	rdfs:isDefinedBy <http://eulersharp.sourceforge.net/2003/03swap/countries#>;
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-2;
+		skos:notation "zw"^^country:iso3166-1-alpha-2DT
+	];
+	skos:exactMatch [
+		a skos:Concept;
+		skos:inScheme country:iso3166-1-alpha-3;
+		skos:notation "zwe"^^country:iso3166-1-alpha-3DT
+	];
+	foaf:name """Zimbabwe"""@en.
