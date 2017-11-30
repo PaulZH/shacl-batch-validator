@@ -3,13 +3,13 @@ package zone.cogni.shacl_validator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.ext.com.google.common.base.Preconditions;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.topbraid.shacl.validation.ValidationUtil;
+import org.topbraid.shacl.vocabulary.SH;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -64,6 +64,8 @@ public class ExecuteValidation implements Runnable {
     log.info("Shacl shapes files: {}.", shaclResources);
     Model shaclModel = JenaUtils.read(shaclResources);
 
+    log.info("Shapes model size: {}", shaclModel.size());
+
     for (Resource validateResource : validateResources) {
       log.info("Validation of {}", validateResource);
       Model dataModel = JenaUtils.read(validateResource);
@@ -93,14 +95,15 @@ public class ExecuteValidation implements Runnable {
   }
 
   private boolean shouldOutputReport(Model reportModel) {
-    List<String> levels = getLevelsToCheck();
+    List<String> severities = getLevelsToCheck();
 
-    for (String level : levels) {
-      org.apache.jena.rdf.model.Resource levelResource = ResourceFactory.createResource("http://www.w3.org/ns/shacl#" + level);
-      Property severityProperty = ResourceFactory.createProperty("http://www.w3.org/ns/shacl#severity");
-      Property resultSeverityProperty = ResourceFactory.createProperty("http://www.w3.org/ns/shacl#resultSeverity");
-      boolean hasMatch = reportModel.listStatements(null, severityProperty, levelResource).hasNext()
-              || reportModel.listStatements(null, resultSeverityProperty, levelResource).hasNext();
+    // always output if level is not set
+    if (severities.isEmpty()) return true;
+
+    for (String severity : severities) {
+      org.apache.jena.rdf.model.Resource severityResource = ResourceFactory.createResource(SH.NS + severity);
+      boolean hasMatch = reportModel.listStatements(null, SH.severity, severityResource).hasNext()
+              || reportModel.listStatements(null, SH.resultSeverity, severityResource).hasNext();
 
       if (hasMatch) return true;
     }
@@ -136,6 +139,5 @@ public class ExecuteValidation implements Runnable {
   private Model validate(Model dataModel, Model shapes) {
     return ValidationUtil.validateModel(dataModel, shapes, true).getModel();
   }
-
 
 }
