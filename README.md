@@ -11,7 +11,7 @@ From the commandline output
 ```
 usage: java -jar shacl.jar
                 [--shacl folder, file or ant-style file pattern] 
-                [--validate folder, file or ant-style file pattern (./conceptscheme/**/*.ttl)] 
+                [--validate folder, file or ant-style file pattern ("./conceptscheme/**/*.ttl")] 
 optional:       [--destination folder] 
 ```
 

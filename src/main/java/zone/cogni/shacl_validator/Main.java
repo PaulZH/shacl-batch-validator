@@ -23,9 +23,8 @@ public class Main {
   private static String usage =
           "usage: java -jar shacl.jar\n" +
                   "                [--shacl folder, file or ant-style file pattern] \n" +
-                  "                [--validate folder, file or ant-style file pattern (./conceptscheme/**/*.ttl)] \n" +
+                  "                [--validate folder, file or ant-style file pattern (\"./conceptscheme/**/*.ttl\")] \n" +
                   "optional:       [--destination folder] \n";
-
 
   private static String shacl;
   private static String validate;
@@ -33,7 +32,6 @@ public class Main {
 
   public static void main(String[] args) {
     long start = currentTimeMillis();
-
 
     processArguments(Arrays.asList(args));
 
@@ -103,7 +101,13 @@ public class Main {
   }
 
   private static void invalidArgument(String argument) {
-    System.err.println("invalid argument given: '" + argument + "'");
+    String message = "\ninvalid argument" ;
+    if (!argument.contains("--")) {
+      message += ", if your OS accidentally expanded the arguments surround the argument with quotes";
+    }
+    message += " '" + argument + "'";
+
+    System.err.println(message);
     giveHelp();
   }
 

@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class ExecuteValidation implements Runnable {
@@ -23,7 +24,11 @@ public class ExecuteValidation implements Runnable {
     try {
       PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
       Resource[] resources = resolver.getResources("file:" + path);
-      return Arrays.asList(resources);
+
+      List<Resource> result = Arrays.asList(resources);
+      result.sort(Comparator.comparing(o -> o.getFilename().toLowerCase()));
+
+      return result;
     }
     catch (IOException e) {
       throw new RuntimeException(e);
