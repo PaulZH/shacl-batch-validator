@@ -21,7 +21,7 @@ public class Main {
   private static final Logger log = LoggerFactory.getLogger(Main.class);
 
   private static String usage =
-          "usage: java -jar shacl-validator.jar\n" +
+          "usage: java -jar shacl.jar\n" +
                   "                [--shacl folder, file or ant-style file pattern] \n" +
                   "                [--validate folder, file or ant-style file pattern (./conceptscheme/**/*.ttl)] \n" +
                   "optional:       [--destination folder] \n";

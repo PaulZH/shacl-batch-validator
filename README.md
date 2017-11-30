@@ -9,7 +9,7 @@ Input shacl and data files can be any type of RDF; output reports are turtle fil
 From the commandline output
 
 ```
-usage: java -jar shacl-validator.jar
+usage: java -jar shacl.jar
                 [--shacl folder, file or ant-style file pattern] 
                 [--validate folder, file or ant-style file pattern (./conceptscheme/**/*.ttl)] 
 optional:       [--destination folder] 
@@ -18,7 +18,7 @@ optional:       [--destination folder]
 Example                     
 
 ```
-java -jar shacl-validator.jar 
+java -jar shacl.jar 
    --shacl ./shacl-examples/*.ttl 
    --validate ./skos/*.ttl
 ```
@@ -35,11 +35,7 @@ Running with settings:
                       
 ## Building
 
-A build will create a `shacl-validator-{version}.jar` file 
-and a `shacl-validator.jar` in `build/libs` folder.
-
-There can be many jar files with a version but only the last one built 
-will be in `shacl-validator.jar`.
+A build will create a `shacl.jar` file. 
 
 ### On Windows
                       
