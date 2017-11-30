@@ -24,18 +24,20 @@ public class Main {
           "usage: java -jar shacl.jar\n" +
                   "                [--shacl folder, file or ant-style file pattern] \n" +
                   "                [--validate folder, file or ant-style file pattern (\"./conceptscheme/**/*.ttl\")] \n" +
-                  "optional:       [--destination folder] \n";
+                  "optional:       [--destination folder] \n" +
+                  "                [--severity outputs only reports of this severity or higher, possible values Info, Warning or Violation] \n";
 
   private static String shacl;
   private static String validate;
   private static String destination;
+  private static String severity;
 
   public static void main(String[] args) {
     long start = currentTimeMillis();
 
     processArguments(Arrays.asList(args));
 
-    new ExecuteValidation(validate, shacl, destination).run();
+    new ExecuteValidation(validate, shacl, destination, severity).run();
 
     log.info("Total time {}s.", (currentTimeMillis() - start) / 1000);
   }
@@ -54,6 +56,7 @@ public class Main {
               Case($("--shacl"), () -> shacl = value),
               Case($("--validate"), () -> validate = value),
               Case($("--destination"), () -> destination = value),
+              Case($("--severity"), () -> severity = value),
               Case($("--help"), () -> run(Main::giveHelp)),
               Case($(), () -> run(() -> invalidArgument(argument)))
       );
@@ -86,6 +89,11 @@ public class Main {
       fail = true;
     }
 
+    if (severity != null && !Arrays.asList("Info", "Warning", "Violation").contains(severity)) {
+      System.out.println("Invalid parameters: --severity expects one of Info, Warning or Violation.");
+      fail = true;
+    }
+
     if (fail) giveHelp();
   }
 
@@ -97,11 +105,13 @@ public class Main {
     System.out.println("\t\t Shacl           : " + shacl);
     System.out.println("\t\t Validate        : " + validate);
     System.out.println("\t\t Destination     : " + destination);
+    System.out.println("\t\t Severity        : " + (severity == null ? "not set, outputting conforming and non-conforming shacl reports"
+                                                                     : severity));
     System.out.println("");
   }
 
   private static void invalidArgument(String argument) {
-    String message = "\ninvalid argument" ;
+    String message = "\ninvalid argument";
     if (!argument.contains("--")) {
       message += ", if your OS accidentally expanded the arguments surround the argument with quotes";
     }
