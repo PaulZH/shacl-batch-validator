@@ -8,20 +8,26 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.stereotype.Service;
 import org.topbraid.shacl.validation.ValidationUtil;
 import org.topbraid.shacl.vocabulary.SH;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ExecuteValidation implements Runnable {
 
-  private static final Logger log = LoggerFactory.getLogger(ExecuteValidation.class);
+@Service
+public class ValidationService {
+
+  private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
+
+  private final ThymeleafService thymeleafService;
 
   public static List<Resource> getResources(String path) {
     try {
@@ -38,28 +44,19 @@ public class ExecuteValidation implements Runnable {
     }
   }
 
-  private String validate;
-  private String shacl;
-  private String destination;
-  private String severity;
-
-  public ExecuteValidation(String validate, String shacl, String destination, String severity) {
-    this.validate = validate;
-    this.shacl = shacl;
-    this.destination = destination;
-    this.severity = severity;
+  public ValidationService(ThymeleafService thymeleafService) {
+    this.thymeleafService = thymeleafService;
   }
 
 
-  @Override
-  public void run() {
+  public void run(String validate, String shacl, String destination, boolean outputHtml, String severity) {
     List<Resource> validateResources = getResources(validate);
     List<Resource> shaclResource = getResources(shacl);
 
-    validate(validateResources, shaclResource);
+    validate(validateResources, shaclResource, destination, outputHtml, severity);
   }
 
-  private void validate(List<Resource> validateResources, List<Resource> shaclResources) {
+  private void validate(List<Resource> validateResources, List<Resource> shaclResources, String destination, boolean outputHtml, String severity) {
 
     log.info("Shacl shapes files: {}.", shaclResources);
     Model shaclModel = JenaUtils.read(shaclResources);
@@ -74,18 +71,38 @@ public class ExecuteValidation implements Runnable {
       if (dataModel.isEmpty()) log.error("File did not contain any triples.");
 
       Model reportModel = validate(dataModel, shaclModel);
-      saveReport(validateResource, reportModel);
+      saveReport(validateResource, reportModel, destination, outputHtml, severity);
     }
   }
 
-  private void saveReport(Resource validateResource, Model reportModel) {
-    if (!shouldOutputReport(reportModel)) {
+  private void saveReport(Resource validateResource, Model reportModel, String destination, boolean outputHtml, String severity) {
+    if (!shouldOutputReport(reportModel, severity)) {
       log.info("Not reaching severity level. No report is created. Report size is {}.", reportModel.size());
       return;
     }
 
-    File reportFile = getReportFile(validateResource);
-    log.info("Creating report '{}'. Report size is {}.", reportFile, reportModel.size());
+    saveRdfReport(validateResource, reportModel, destination);
+    saveHtmlReport(validateResource, reportModel, destination, outputHtml);
+  }
+
+  private void saveHtmlReport(Resource validateResource, Model reportModel, String destination, boolean outputHtml) {
+    if (!outputHtml) return;
+
+    File reportFile = getReportFile(validateResource, destination, "html");
+    log.info("Creating HTML report '{}'. Report size is {}.", reportFile, reportModel.size());
+
+    // TODO UTF8!!
+    try (FileWriter out = new FileWriter(reportFile)) {
+      out.write(thymeleafService.process());
+    }
+    catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private void saveRdfReport(Resource validateResource, Model reportModel, String destination) {
+    File reportFile = getReportFile(validateResource,  destination,"ttl");
+    log.info("Creating RDF report '{}'. Report size is {}.", reportFile, reportModel.size());
     try (FileOutputStream out = new FileOutputStream(reportFile)) {
       reportModel.write(out, "ttl");
     }
@@ -94,8 +111,8 @@ public class ExecuteValidation implements Runnable {
     }
   }
 
-  private boolean shouldOutputReport(Model reportModel) {
-    List<String> severities = getLevelsToCheck();
+  private boolean shouldOutputReport(Model reportModel, String limitSeverity) {
+    List<String> severities = getLevelsToCheck(limitSeverity);
 
     // always output if level is not set
     if (severities.isEmpty()) return true;
@@ -111,7 +128,7 @@ public class ExecuteValidation implements Runnable {
     return false;
   }
 
-  private List<String> getLevelsToCheck() {
+  private List<String> getLevelsToCheck(String severity) {
     if (severity == null) return Collections.emptyList();
 
     List<String> severities = Arrays.asList("Info", "Warning", "Violation");
@@ -119,15 +136,15 @@ public class ExecuteValidation implements Runnable {
   }
 
 
-  private File getReportFile(Resource validateResource) {
-    File root = getDestinationFolder();
+  private File getReportFile(Resource validateResource, String destination, String fileExtension) {
+    File root = getDestinationFolder(destination);
 
     String filename = validateResource.getFilename();
-    String reportFileName = StringUtils.substringBeforeLast(filename, ".") + ".report.ttl";
+    String reportFileName = StringUtils.substringBeforeLast(filename, ".") + ".report." + fileExtension;
     return new File(root, reportFileName);
   }
 
-  private File getDestinationFolder() {
+  private File getDestinationFolder(String destination) {
     File root = destination == null ? new File(".")
                                     : new File(destination);
 

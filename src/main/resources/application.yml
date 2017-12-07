@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    suffix: .html
+    mode: XHTML
+
+logging:
+  level:
+    org:
+      thymeleaf: INFO
