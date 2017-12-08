@@ -13,7 +13,6 @@ import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.vocabulary.RDF;
 import org.topbraid.shacl.vocabulary.SH;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -24,9 +23,13 @@ import java.util.stream.Collectors;
 class Report {
 
   private final Model model;
+  private final List<String> columns;
+  private final List<String> sorting;
 
-  Report(Model model) {
+  Report(Model model, List<String> columns, List<String> sorting) {
     this.model = model;
+    this.columns = columns;
+    this.sorting = sorting;
   }
 
   public Model getModel() {
@@ -57,9 +60,29 @@ class Report {
             .map(result -> new ReportLine(model, result))
             .collect(Collectors.toList());
 
-    reportLines.sort(ReportLine.getComparator());
+    reportLines.sort(ReportLine.getComparator(sorting));
 
     return reportLines;
+  }
+
+  public List<String> getColumnHeaders() {
+    return columns.stream()
+            .map(this::getHumanReadableString)
+            .collect(Collectors.toList());
+  }
+
+  private String getHumanReadableString(String camelCase) {
+    String trim = camelCase.trim();
+    if (StringUtils.isBlank(trim)) return "";
+
+    String result = String.valueOf(trim.charAt(0));
+    for (int i = 1; i < trim.length(); i++) {
+      char c = trim.charAt(i);
+      result += Character.isUpperCase(c) ? " " + Character.toLowerCase(c)
+                                         : String.valueOf(c);
+    }
+
+    return result;
   }
 
   public long getSeverityCount(String severity) {
@@ -116,13 +139,15 @@ class Report {
 
   private static class ReportLine {
 
-    public static Comparator<ReportLine> getComparator() {
+    public static Comparator<ReportLine> getComparator(List<String> sorting) {
+
+      List<Property> properties = sorting.stream()
+              .map(name -> ResourceFactory.createProperty(SH.NS + name))
+              .collect(Collectors.toList());
+
       return new Comparator<ReportLine>() {
 
-        private final List<Property> sortProperties = Arrays.asList(SH.sourceShape,
-                                                                    SH.resultPath,
-                                                                    SH.sourceConstraintComponent,
-                                                                    SH.resultMessage);
+        private final List<Property> sortProperties = properties;
 
         @Override
         public int compare(ReportLine left, ReportLine right) {

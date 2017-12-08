@@ -1,6 +1,7 @@
 package zone.cogni.shacl_validator;
 
 import io.vavr.control.Try;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -157,6 +159,7 @@ public class Main implements CommandLineRunner {
     System.out.println("\n" + usage);
     exit(1);
   }
+
   private ValidationService validationService;
 
   public Main(ValidationService validationService) {
@@ -168,8 +171,14 @@ public class Main implements CommandLineRunner {
 
     processArguments(Arrays.asList(args));
 
-    validationService.run(validate, shacl, destination, Boolean.parseBoolean(html), severity);
+    validationService.run(validate, shacl, destination, Boolean.parseBoolean(html), getList(columns), getList(sorting), severity);
 
     log.info("Total time {}s.", (currentTimeMillis() - start) / 1000);
+  }
+
+  private List<String> getList(String toBeSplit) {
+    if (StringUtils.isBlank(toBeSplit)) return Collections.emptyList();
+
+    return Arrays.asList(toBeSplit.split(","));
   }
 }

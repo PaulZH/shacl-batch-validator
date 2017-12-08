@@ -25,13 +25,11 @@ import java.util.List;
 @Service
 public class ValidationService {
 
+  private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
+
   public static List<String> getSeverities() {
     return Arrays.asList("Info", "Warning", "Violation");
   }
-
-  private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
-
-  private final ThymeleafService thymeleafService;
 
   public static List<Resource> getResources(String path) {
     try {
@@ -47,20 +45,24 @@ public class ValidationService {
       throw new RuntimeException(e);
     }
   }
+  private final ThymeleafService thymeleafService;
 
   public ValidationService(ThymeleafService thymeleafService) {
     this.thymeleafService = thymeleafService;
   }
 
 
-  public void run(String validate, String shacl, String destination, boolean outputHtml, String severity) {
+  public void run(String validate, String shacl, String destination,
+                  boolean outputHtml, List<String> columns, List<String> sorting,
+                  String severity) {
     List<Resource> validateResources = getResources(validate);
     List<Resource> shaclResource = getResources(shacl);
 
-    validate(validateResources, shaclResource, destination, outputHtml, severity);
+    validate(validateResources, shaclResource, destination, outputHtml, columns, sorting, severity);
   }
 
-  private void validate(List<Resource> validateResources, List<Resource> shaclResources, String destination, boolean outputHtml, String severity) {
+  private void validate(List<Resource> validateResources, List<Resource> shaclResources, String destination,
+                        boolean outputHtml, List<String> columns, List<String> sorting, String severity) {
 
     log.info("Shacl shapes files: {}.", shaclResources);
     Model shaclModel = JenaUtils.read(shaclResources);
@@ -75,7 +77,7 @@ public class ValidationService {
       if (dataModel.isEmpty()) log.error("File did not contain any triples.");
 
       Model reportModel = validate(dataModel, shaclModel);
-      saveReport(validateResource, new Report(reportModel), destination, outputHtml, severity);
+      saveReport(validateResource, new Report(reportModel, columns, sorting), destination, outputHtml, severity);
     }
   }
 
@@ -86,17 +88,17 @@ public class ValidationService {
     }
 
     saveRdfReport(validateResource, report.getModel(), destination);
-    saveHtmlReport(validateResource, report.getModel(), destination, outputHtml);
+    saveHtmlReport(validateResource, report, destination, outputHtml);
   }
 
-  private void saveHtmlReport(Resource validateResource, Model reportModel, String destination, boolean outputHtml) {
+  private void saveHtmlReport(Resource validateResource, Report report, String destination, boolean outputHtml) {
     if (!outputHtml) return;
 
     File reportFile = getReportFile(validateResource, destination, "html");
-    log.info("Creating HTML report '{}'. Report size is {}.", reportFile, reportModel.size());
+    log.info("Creating HTML report '{}'. Report size is {}.", reportFile, report.size());
 
     try (Writer out = new OutputStreamWriter(new FileOutputStream(reportFile), StandardCharsets.UTF_8)) {
-      out.write(thymeleafService.process(validateResource, reportModel));
+      out.write(thymeleafService.process(validateResource, report));
     }
     catch (IOException e) {
       throw new RuntimeException(e);
@@ -104,7 +106,7 @@ public class ValidationService {
   }
 
   private void saveRdfReport(Resource validateResource, Model reportModel, String destination) {
-    File reportFile = getReportFile(validateResource,  destination,"ttl");
+    File reportFile = getReportFile(validateResource, destination, "ttl");
     log.info("Creating RDF report '{}'. Report size is {}.", reportFile, reportModel.size());
     try (FileOutputStream out = new FileOutputStream(reportFile)) {
       reportModel.write(out, "ttl");

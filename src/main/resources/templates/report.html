@@ -173,13 +173,7 @@
 <table class="table-fill">
     <thead>
     <tr>
-        <th class="text-left">Source shape</th>
-        <th class="text-left">Result path</th>
-        <th class="text-left">Source constraint component</th>
-        <th class="text-left">Result message</th>
-        <th class="text-left">Focus node</th>
-        <th class="text-left">Value</th>
-        <th class="text-left">Result Severity</th>
+        <th th:each="columnHeader : ${report.getColumnHeaders()}" class="text-left" th:text="${columnHeader}">header</th>
     </tr>
     </thead>
     <tbody class="table-hover">
