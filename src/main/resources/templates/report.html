@@ -1,9 +1,242 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
 <head>
     <meta charset="utf-8"/>
-    <title>blah</title>
+    <title th:text="${name}">File name</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+        body {
+            background-color: #3e94ec;
+            font-family: "Roboto", helvetica, arial, sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            text-rendering: optimizeLegibility;
+        }
+
+        div.table-title {
+            display: block;
+            margin: auto;
+            max-width: 600px;
+            padding: 5px;
+            width: 100%;
+        }
+
+        .table-title h3 {
+            color: #fafafa;
+            font-size: 30px;
+            font-weight: 400;
+            font-style: normal;
+            font-family: "Roboto", helvetica, arial, sans-serif;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+        }
+
+        /*** Table Styles **/
+
+        .table-fill {
+            background: white;
+            border-radius: 3px;
+            border-collapse: collapse;
+            height: 320px;
+            margin: auto;
+            max-width: 600px;
+            padding: 5px;
+            width: 100%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            animation: float 5s infinite;
+        }
+
+        th {
+            color: #D5DDE5;;
+            background: #1b1e24;
+            border-bottom: 4px solid #9ea7af;
+            border-right: 1px solid #343a45;
+            font-size: 16px;
+            font-weight: 100;
+            padding: 24px;
+            text-align: left;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            vertical-align: middle;
+        }
+
+        th:first-child {
+            border-top-left-radius: 3px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 3px;
+            border-right: none;
+        }
+
+        tr {
+            border-top: 1px solid #C1C3D1;
+            border-bottom-: 1px solid #C1C3D1;
+            color: #666B85;
+            font-size: 13px;
+            font-weight: normal;
+            text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+        }
+
+        tr:hover td {
+            background: #4E5066;
+            color: #FFFFFF;
+            border-top: 1px solid #22262e;
+        }
+
+        tr:first-child {
+            border-top: none;
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        tr:nth-child(odd) td {
+            background: #EBEBEB;
+        }
+
+        tr:nth-child(odd):hover td {
+            background: #4E5066;
+        }
+
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 3px;
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 3px;
+        }
+
+        td {
+            background: #FFFFFF;
+            padding: 5px;
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 300;
+            font-size: 13px;
+            text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #C1C3D1;
+        }
+
+        .preamble {
+            font-size: 9px;
+        }
+
+        td:last-child {
+            border-right: 0px;
+        }
+
+        th.text-left {
+            text-align: left;
+        }
+
+        th.text-center {
+            text-align: center;
+        }
+
+        th.text-right {
+            text-align: right;
+        }
+
+        td.text-left {
+            text-align: left;
+        }
+
+        td.text-center {
+            text-align: center;
+        }
+
+        td.text-right {
+            text-align: right;
+        }
+
+    </style>
 </head>
+
+<!--/*@thymesVar id="report" type="zone.cogni.shacl_validator.ThymeleafService.Report"*/-->
 <body>
-<p>I'm the content</p>
+
+<div class="table-title">
+    <h3 th:text="${name}">Filename</h3>
+</div>
+
+<!--/*@thymesVar id="severityCount" type="zone.cogni.shacl_validator.Report.SeverityCount"*/-->
+<ul th:each="severityCount : ${report.getSeverityCounts()}">
+    <li th:if="${severityCount.getCount() > 0}"><b>
+        <span th:text="${severityCount.getSeverity()}">severity</span>:</b>
+        <span th:text="${severityCount.getCount()}"></span>
+    </li>
+</ul>
+
+<table class="table-fill">
+    <thead>
+    <tr>
+        <th class="text-left">Source shape</th>
+        <th class="text-left">Result path</th>
+        <th class="text-left">Source constraint component</th>
+        <th class="text-left">Result message</th>
+        <th class="text-left">Focus node</th>
+        <th class="text-left">Value</th>
+        <th class="text-left">Result Severity</th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    <!--/*@thymesVar id="reportLine" type="zone.cogni.shacl_validator.Report.ReportLine"*/-->
+    <tr th:each="reportLine : ${report.getReportLines()}">
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('sourceShape') != null}"
+                 th:text="${reportLine.getStartValue('sourceShape')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('sourceShape')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('resultPath') != null}"
+                 th:text="${reportLine.getStartValue('resultPath')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('resultPath')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('sourceConstraintComponent') != null}"
+                 th:text="${reportLine.getStartValue('sourceConstraintComponent')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('sourceConstraintComponent')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('resultMessage') != null}"
+                 th:text="${reportLine.getStartValue('resultMessage')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('resultMessage')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('focusNode') != null}"
+                 th:text="${reportLine.getStartValue('focusNode')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('focusNode')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('value') != null}"
+                 th:text="${reportLine.getStartValue('value')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('value')}">sourceShape</div>
+        </td>
+        <td>
+            <div class="preamble"
+                 th:if="${reportLine.getStartValue('resultSeverity') != null}"
+                 th:text="${reportLine.getStartValue('resultSeverity')}">preamble
+            </div>
+            <div th:text="${reportLine.getValue('resultSeverity')}">sourceShape</div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

@@ -6,4 +6,5 @@ spring:
 logging:
   level:
     org:
-      thymeleaf: INFO
+      thymeleaf: WARN
+      springframework: WARN

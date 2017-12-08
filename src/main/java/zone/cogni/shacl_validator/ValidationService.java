@@ -3,19 +3,19 @@ package zone.cogni.shacl_validator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.ext.com.google.common.base.Preconditions;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ResourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 import org.topbraid.shacl.validation.ValidationUtil;
-import org.topbraid.shacl.vocabulary.SH;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -24,6 +24,10 @@ import java.util.List;
 
 @Service
 public class ValidationService {
+
+  public static List<String> getSeverities() {
+    return Arrays.asList("Info", "Warning", "Violation");
+  }
 
   private static final Logger log = LoggerFactory.getLogger(ValidationService.class);
 
@@ -71,18 +75,18 @@ public class ValidationService {
       if (dataModel.isEmpty()) log.error("File did not contain any triples.");
 
       Model reportModel = validate(dataModel, shaclModel);
-      saveReport(validateResource, reportModel, destination, outputHtml, severity);
+      saveReport(validateResource, new Report(reportModel), destination, outputHtml, severity);
     }
   }
 
-  private void saveReport(Resource validateResource, Model reportModel, String destination, boolean outputHtml, String severity) {
-    if (!shouldOutputReport(reportModel, severity)) {
-      log.info("Not reaching severity level. No report is created. Report size is {}.", reportModel.size());
+  private void saveReport(Resource validateResource, Report report, String destination, boolean outputHtml, String severity) {
+    if (!shouldOutputReport(report, severity)) {
+      log.info("Not reaching severity level. No report is created. Number of results is {}.", report.size());
       return;
     }
 
-    saveRdfReport(validateResource, reportModel, destination);
-    saveHtmlReport(validateResource, reportModel, destination, outputHtml);
+    saveRdfReport(validateResource, report.getModel(), destination);
+    saveHtmlReport(validateResource, report.getModel(), destination, outputHtml);
   }
 
   private void saveHtmlReport(Resource validateResource, Model reportModel, String destination, boolean outputHtml) {
@@ -91,9 +95,8 @@ public class ValidationService {
     File reportFile = getReportFile(validateResource, destination, "html");
     log.info("Creating HTML report '{}'. Report size is {}.", reportFile, reportModel.size());
 
-    // TODO UTF8!!
-    try (FileWriter out = new FileWriter(reportFile)) {
-      out.write(thymeleafService.process());
+    try (Writer out = new OutputStreamWriter(new FileOutputStream(reportFile), StandardCharsets.UTF_8)) {
+      out.write(thymeleafService.process(validateResource, reportModel));
     }
     catch (IOException e) {
       throw new RuntimeException(e);
@@ -111,17 +114,14 @@ public class ValidationService {
     }
   }
 
-  private boolean shouldOutputReport(Model reportModel, String limitSeverity) {
+  private boolean shouldOutputReport(Report report, String limitSeverity) {
     List<String> severities = getLevelsToCheck(limitSeverity);
 
     // always output if level is not set
     if (severities.isEmpty()) return true;
 
     for (String severity : severities) {
-      org.apache.jena.rdf.model.Resource severityResource = ResourceFactory.createResource(SH.NS + severity);
-      boolean hasMatch = reportModel.listStatements(null, SH.severity, severityResource).hasNext()
-              || reportModel.listStatements(null, SH.resultSeverity, severityResource).hasNext();
-
+      boolean hasMatch = report.getSeverityCount(severity) > 0;
       if (hasMatch) return true;
     }
 
@@ -131,10 +131,9 @@ public class ValidationService {
   private List<String> getLevelsToCheck(String severity) {
     if (severity == null) return Collections.emptyList();
 
-    List<String> severities = Arrays.asList("Info", "Warning", "Violation");
+    List<String> severities = getSeverities();
     return severities.subList(severities.indexOf(severity), severities.size());
   }
-
 
   private File getReportFile(Resource validateResource, String destination, String fileExtension) {
     File root = getDestinationFolder(destination);
