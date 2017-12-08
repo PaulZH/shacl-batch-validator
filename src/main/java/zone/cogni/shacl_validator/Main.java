@@ -136,8 +136,8 @@ public class Main implements CommandLineRunner {
     System.out.println("\t\t Validate        : " + validate);
     System.out.println("\t\t Destination     : " + destination);
     System.out.println("\t\t Html            : " + html);
-    System.out.println("\t\t Columns         : " + columns);
-    System.out.println("\t\t Sorting         : " + sorting);
+    if (columns != null) System.out.println("\t\t Columns         : " + columns);
+    if (sorting != null) System.out.println("\t\t Sorting         : " + sorting);
     System.out.println("\t\t Severity        : " + (severity == null ? "not set, outputting conforming and non-conforming shacl reports"
                                                                      : severity));
     System.out.println("");
