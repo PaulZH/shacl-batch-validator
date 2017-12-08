@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -62,7 +61,7 @@ public class Main implements CommandLineRunner {
   private static String sorting;
 
   public static void main(String[] args) {
-    ConfigurableApplicationContext run = SpringApplication.run(Main.class, args);
+    SpringApplication.run(Main.class, args);
   }
 
   private static void processArguments(List<String> arguments) {

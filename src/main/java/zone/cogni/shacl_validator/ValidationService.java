@@ -45,6 +45,7 @@ public class ValidationService {
       throw new RuntimeException(e);
     }
   }
+
   private final ThymeleafService thymeleafService;
 
   public ValidationService(ThymeleafService thymeleafService) {
@@ -71,13 +72,25 @@ public class ValidationService {
 
     for (Resource validateResource : validateResources) {
       log.info("Validation of {}", validateResource);
-      Model dataModel = JenaUtils.read(validateResource);
+
+      Model dataModel = getDataModel(validateResource);
+      if (dataModel == null) continue;
 
       log.info("Number of triples to be validated: {}", dataModel.size());
       if (dataModel.isEmpty()) log.error("File did not contain any triples.");
 
       Model reportModel = validate(dataModel, shaclModel);
       saveReport(validateResource, new Report(reportModel, columns, sorting), destination, outputHtml, severity);
+    }
+  }
+
+  private Model getDataModel(Resource validateResource) {
+    try {
+      return JenaUtils.read(validateResource);
+    }
+    catch (Exception e) {
+      log.error("Not an RDF file. Skipping.");
+      return null;
     }
   }
 

@@ -51,6 +51,10 @@ class Report {
             .collect(Collectors.toList());
   }
 
+  public List<String> getColumns() {
+    return columns;
+  }
+
   public List<ReportLine> getReportLines() {
     Set<Statement> statements = model.listStatements(null, RDF.type, SH.AbstractResult).toSet();
     statements.addAll(model.listStatements(null, RDF.type, SH.ValidationResult).toSet());
@@ -75,7 +79,7 @@ class Report {
     String trim = camelCase.trim();
     if (StringUtils.isBlank(trim)) return "";
 
-    String result = String.valueOf(trim.charAt(0));
+    String result = String.valueOf(Character.toUpperCase(trim.charAt(0)));
     for (int i = 1; i < trim.length(); i++) {
       char c = trim.charAt(i);
       result += Character.isUpperCase(c) ? " " + Character.toLowerCase(c)
