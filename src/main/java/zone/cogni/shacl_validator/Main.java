@@ -10,6 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static io.vavr.API.$;
 import static io.vavr.API.Case;
@@ -21,14 +22,33 @@ import static java.lang.System.exit;
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
+  /*
+  SH.sourceShape,
+                                                                    SH.resultPath,
+                                                                    SH.sourceConstraintComponent,
+                                                                    SH.resultMessage
+   */
   private static final Logger log = LoggerFactory.getLogger(Main.class);
+
+  private static String COLUMNS_DEFAULT = "resultSeverity,sourceShape,resultPath,resultMessage,focusNode,value";
+  private static String SORTING_DEFAULT = "sourceShape,resultPath,sourceConstraintComponent,resultMessage";
 
   private static String usage =
           "usage: java -jar shacl.jar\n" +
                   "                [--shacl folder, file or ant-style file pattern] \n" +
                   "                [--validate folder, file or ant-style file pattern (\"./conceptscheme/**/*.ttl\")] \n" +
                   "optional:       [--destination folder] \n" +
-                  "                [--html true (default false)]" +
+                  "                [--html true (default false)] \n" +
+                  "                [--columns comma separated list of html report columns \n" +
+                  "                           possible values are: detail, focusNode, resultMessage, resultPath, \n" +
+                  "                                                resultSeverity, sourceConstraint, sourceShape, \n" +
+                  "                                                sourceConstraintComponent and value\n" +
+                  "                           default value: " + COLUMNS_DEFAULT + "\n" +
+                  "                [--sorting comma separated list of html report sort columns\n" +
+                  "                           possible values are: detail, focusNode, resultMessage, resultPath, \n" +
+                  "                                                resultSeverity, sourceConstraint, sourceShape, \n" +
+                  "                                                sourceConstraintComponent and value \n" +
+                  "                           default value: " + SORTING_DEFAULT + " \n" +
                   "                [--severity outputs only reports of this severity or higher, possible values Info, Warning or Violation] \n";
 
   private static String shacl;
@@ -36,12 +56,8 @@ public class Main implements CommandLineRunner {
   private static String destination;
   private static String severity;
   private static String html;
-
-  private ValidationService validationService;
-
-  public Main(ValidationService validationService) {
-    this.validationService = validationService;
-  }
+  private static String columns;
+  private static String sorting;
 
   public static void main(String[] args) {
     ConfigurableApplicationContext run = SpringApplication.run(Main.class, args);
@@ -62,6 +78,8 @@ public class Main implements CommandLineRunner {
               Case($("--validate"), () -> validate = value),
               Case($("--destination"), () -> destination = value),
               Case($("--html"), () -> html = value),
+              Case($("--columns"), () -> columns = value),
+              Case($("--sorting"), () -> sorting = value),
               Case($("--severity"), () -> severity = value),
               Case($("--help"), () -> Try.run(Main::giveHelp)),
               Case($(), () -> Try.run(() -> invalidArgument(argument)))
@@ -72,10 +90,14 @@ public class Main implements CommandLineRunner {
     if (validate == null) validate = ".";
     if (html == null) html = "false";
 
+    if (Objects.equals(html, "true")) {
+      if (columns == null) columns = COLUMNS_DEFAULT;
+      if (sorting == null) sorting = SORTING_DEFAULT;
+    }
+
     printSettings();
 
     checkArguments();
-
   }
 
   private static void checkArguments() {
@@ -113,6 +135,8 @@ public class Main implements CommandLineRunner {
     System.out.println("\t\t Validate        : " + validate);
     System.out.println("\t\t Destination     : " + destination);
     System.out.println("\t\t Html            : " + html);
+    System.out.println("\t\t Columns         : " + columns);
+    System.out.println("\t\t Sorting         : " + sorting);
     System.out.println("\t\t Severity        : " + (severity == null ? "not set, outputting conforming and non-conforming shacl reports"
                                                                      : severity));
     System.out.println("");
@@ -132,6 +156,11 @@ public class Main implements CommandLineRunner {
   private static void giveHelp() {
     System.out.println("\n" + usage);
     exit(1);
+  }
+  private ValidationService validationService;
+
+  public Main(ValidationService validationService) {
+    this.validationService = validationService;
   }
 
   public void run(String... args) throws Exception {
