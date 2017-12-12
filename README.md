@@ -1,4 +1,4 @@
-# Shacl Validator
+# Shacl Batch Validator
 
 Using this tool you can easily run shacl validations and get reports.
 
@@ -9,7 +9,7 @@ Input shacl and data files can be any type of RDF; output reports are turtle fil
 From the commandline output
 
 ```
-usage: java -jar shacl.jar
+usage: java -jar shacl-batch-validator.jar
                 [--shacl folder, file or ant-style file pattern] 
                 [--validate folder, file or ant-style file pattern ("./conceptscheme/**/*.ttl")] 
 optional:       [--destination folder] 
@@ -30,7 +30,7 @@ optional:       [--destination folder]
 Example                     
 
 ```
-java -jar shacl.jar 
+java -jar shacl-batch-validator.jar 
    --shacl ./shacl-examples/*.ttl 
    --validate ./skos/*.ttl
 ```
@@ -49,7 +49,7 @@ Running with settings:
                       
 ## Building
 
-A build will create a `shacl.jar` file. 
+A build will create a `shacl-batch-validator.jar` file. 
 
 ### On Windows
                       
