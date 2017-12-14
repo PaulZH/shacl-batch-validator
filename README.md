@@ -2,7 +2,7 @@
 
 Using this tool you can easily run shacl validations and get reports.
 
-Input shacl and data files can be any type of RDF; output reports are turtle files.
+Input shacl and data files can be any type of RDF; output reports are turtle files or html reports.
 
 ## Using the tool 
 
