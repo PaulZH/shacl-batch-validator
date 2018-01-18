@@ -1,11 +1,13 @@
 package zone.cogni.shacl_validator;
 
+import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.ext.com.google.common.base.Preconditions;
 import org.apache.jena.rdf.model.Model;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
 import org.topbraid.shacl.validation.ValidationUtil;
@@ -129,7 +131,7 @@ public class ValidationService {
       return JenaUtils.read(validateResource);
     }
     catch (Exception e) {
-      log.error("Not an RDF file. Skipping.");
+      log.error("Not an RDF file. Skipping.", e);
       return null;
     }
   }
@@ -193,9 +195,24 @@ public class ValidationService {
   private File getReportFile(Resource validateResource, String destination, String fileExtension) {
     File root = getDestinationFolder(destination);
 
-    String filename = validateResource.getFilename();
+    String filename = getFilename(validateResource);
     String reportFileName = StringUtils.substringBeforeLast(filename, ".") + ".report." + fileExtension;
     return new File(root, reportFileName);
+  }
+
+  private String getFilename(Resource reportResource) {
+    // some special treatment for urls
+    if (ClassUtils.isAssignable(reportResource.getClass(), UrlResource.class)) {
+      try {
+        String path = reportResource.getURL().getPath().substring(1);
+        return StringUtils.replace(path, "/", "-");
+      }
+      catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+
+    return reportResource.getFilename();
   }
 
   private File getDestinationFolder(String destination) {
@@ -208,7 +225,9 @@ public class ValidationService {
   }
 
   private Model validate(Model dataModel, Model shapes) {
-    return ValidationUtil.validateModel(dataModel, shapes, true).getModel();
+    Model model = ValidationUtil.validateModel(dataModel, shapes, true).getModel();
+    model.setNsPrefix("sh", "http://www.w3.org/ns/shacl#");
+    return model;
   }
 
 }

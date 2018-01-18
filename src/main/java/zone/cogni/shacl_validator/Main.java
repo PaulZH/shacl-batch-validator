@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static io.vavr.API.$;
 import static io.vavr.API.Case;
@@ -127,7 +129,7 @@ public class Main implements CommandLineRunner {
     System.out.println("Running with settings: ");
     System.out.println("");
     System.out.println("\t\t Shacl           : " + shacl);
-    System.out.println("\t\t Validate        : " + validate);
+    System.out.println("\t\t Validate        : " + getValidateString());
     System.out.println("\t\t Destination     : " + destination);
     System.out.println("\t\t Html            : " + html);
     if (columns != null) System.out.println("\t\t Columns         : " + columns);
@@ -135,6 +137,11 @@ public class Main implements CommandLineRunner {
     System.out.println("\t\t Severity        : " + (severity == null ? "not set, outputting conforming and non-conforming shacl reports"
                                                                      : severity));
     System.out.println("");
+  }
+
+  private static String getValidateString() {
+    return Stream.of(StringUtils.split(validate, ","))
+            .collect(Collectors.joining("\n\t\t                   "));
   }
 
   private static void invalidArgument(String argument) {
