@@ -15,11 +15,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.net.MalformedURLException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -31,8 +34,37 @@ public class ValidationService {
     return Arrays.asList("Info", "Warning", "Violation");
   }
 
-  public static List<Resource> getResources(String path) {
+  public static List<Resource> getResources(String paths) {
+    return getPaths(paths).stream()
+            .map(ValidationService::getResourcesForOne)
+            .flatMap(Collection::stream)
+            .collect(Collectors.toList());
+  }
+
+  private static List<Resource> getResourcesForOne(String path) {
+    if (StringUtils.isBlank(path)) return Collections.emptyList();
+
+    if (path.startsWith("http")) {
+      return returnUrlResources(path);
+    }
+
+    return returnFileResources(path);
+  }
+
+  private static List<Resource> returnUrlResources(String path) {
     try {
+      UrlHeadersResource resource = new UrlHeadersResource(path)
+              .setHeader("Accept", "text/turtle,application/rdf+xml,text/plain");
+      return Collections.singletonList(resource);
+    }
+    catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  private static List<Resource> returnFileResources(String path) {
+    try {
+
       PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
       Resource[] resources = resolver.getResources("file:" + path);
 
@@ -44,6 +76,14 @@ public class ValidationService {
     catch (IOException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  private static List<String> getPaths(String path) {
+    String[] paths = StringUtils.split(path, ",");
+    return Arrays.stream(paths)
+            .map(s -> StringUtils.trim(s))
+            .filter(s -> StringUtils.isNotBlank(s))
+            .collect(Collectors.toList());
   }
 
   private final ThymeleafService thymeleafService;

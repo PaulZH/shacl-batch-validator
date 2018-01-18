@@ -1,6 +1,7 @@
 package zone.cogni.shacl_validator;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.LineIterator;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.ext.com.google.common.base.Preconditions;
 import org.apache.jena.rdf.model.Model;
@@ -9,6 +10,7 @@ import org.apache.jena.rdf.model.RDFErrorHandler;
 import org.apache.jena.rdf.model.RDFReader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 
 import java.io.IOException;
@@ -90,15 +92,40 @@ public class JenaUtils {
 
   private static String getRdfSyntax(Resource resource) {
     String extension = StringUtils.lowerCase(StringUtils.substringAfterLast(resource.getFilename(), "."));
-    if ("owl".equals(extension)) {
-      return null;
-    }
     if ("nt".equals(extension)) {
       return "N-TRIPLE";
     }
     if ("n3".equals(extension) || "ttl".equals(extension)) {
       return "TURTLE";
     }
+
+    // cannot do any more work here
+    if (resource instanceof InputStreamResource) return null;
+
+    try {
+      LineIterator lineIterator = IOUtils.lineIterator(resource.getInputStream(), "UTF-8");
+      while (lineIterator.hasNext()) {
+        String line = lineIterator.next();
+        if (StringUtils.isBlank(line)) continue;
+
+        if (line.toLowerCase().startsWith("@prefix")) {
+          log.info("Guessed type from content: TURTLE");
+          return "TURTLE";
+        }
+        if (line.startsWith("<http")){
+          log.info("Guessed type from content: N-TRIPLE");
+          return "N-TRIPLE";
+        }
+        if (line.startsWith("<rdf:RDF")) return null;
+
+        log.warn("Unknown content for RDF. Starts with {}", line);
+        return null;
+      }
+    }
+    catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+
     return null;
   }
 

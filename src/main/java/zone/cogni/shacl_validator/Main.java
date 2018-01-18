@@ -23,16 +23,10 @@ import static java.lang.System.exit;
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
-  /*
-  SH.sourceShape,
-                                                                    SH.resultPath,
-                                                                    SH.sourceConstraintComponent,
-                                                                    SH.resultMessage
-   */
   private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-  private static String COLUMNS_DEFAULT = "resultSeverity,sourceShape,resultPath,resultMessage,focusNode,value";
-  private static String SORTING_DEFAULT = "sourceShape,resultPath,sourceConstraintComponent,resultMessage";
+  private static final String COLUMNS_DEFAULT = "resultSeverity,sourceShape,resultPath,resultMessage,focusNode,value";
+  private static final String SORTING_DEFAULT = "sourceShape,resultPath,sourceConstraintComponent,resultMessage";
 
   private static String usage =
           "usage: java -jar shacl.jar\n" +
