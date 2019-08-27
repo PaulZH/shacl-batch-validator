@@ -50,7 +50,7 @@ dependencies {
 
   compile('io.vavr:vavr:0.9.1')
 
-  compile('com.github.TopQuadrant:shacl:shacl-1.0.1') {
+  compile('com.github.TopQuadrant:shacl:shacl-1.2.1') {
     exclude group: 'org.slf4j', module: 'slf4j-log4j12'
   }
 
