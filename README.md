@@ -27,12 +27,14 @@ optional:       [--destination folder]
                 [--severity outputs only reports of this severity or higher, possible values Info, Warning or Violation] 
 ```
 
-Example                     
+Run the example (after building)                  
 
 ```
-java -jar shacl-batch-validator.jar 
-   --shacl ./shacl-examples/*.ttl 
-   --validate ./skos/*.ttl
+cd build
+
+java -jar ./libs/shacl-batch-validator.jar \
+ --shacl ./resources/test/shacl-examples/*.ttl \
+ --validate ./resources/test/skos/*.ttl
 ```
 
 will start and show
